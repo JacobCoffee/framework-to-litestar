@@ -1,3 +1,9 @@
+"""Modify files based on specified codemods and directory.
+
+Currently does a vary naive string transformation, will look to using
+`bowler` or `libCST` directly in the future.
+"""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -42,7 +48,8 @@ def modify_files(directory: Path | str, mods: list[str] | None, dry_run: bool = 
     """
     console.print(f"Modifying files in '{get_absolute_path(directory)}'")
     for file_path in get_files(Path(directory)):
-        console.print(f"Modifying file '{file_path}'")
+        msg = f"Would have modified file '{file_path}'" if dry_run else f"Modifying file '{file_path}'"
+        console.print(msg)
         modify_file(file_path, mods, dry_run)
 
 

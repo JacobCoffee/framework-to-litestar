@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Literal
 
 import cappa
 from rich import get_console
@@ -10,7 +11,7 @@ from rich.prompt import Confirm
 from typing_extensions import Annotated, Doc
 
 from framework_to_litestar._codemod.fastapi.modify import modify_files
-from framework_to_litestar._utils import generate_literal_for_codemods, get_absolute_path
+from framework_to_litestar._utils import generate_options_for_codemods, get_absolute_path
 
 console = get_console()
 
@@ -22,16 +23,16 @@ class Fastapi:
 
     .. todo:: We could generalize all the framework things to not be so duplicative.
         They all do the same shit and only difference is the available codemods
-        which can just be dynamically passed into `invoke="framework_to_litestar.frameworks.$target-framework.convert")
+        which can just be dynamically passed into `invoke="framework_to_litestar.frameworks.$target-framework.convert"`)
         depending on the given CLI framework e.g, ``ftl $target-framework $target-directory``
     """
 
     directory: Annotated[str, cappa.Arg(help="Directory to convert")]
     dry_run: Annotated[bool, cappa.Arg(short=True, long=True), Doc("Perform a dry run without modifying files")] = False
     confirm: Annotated[bool | None, cappa.Arg(long=True), Doc("Confirm before proceeding with the conversion")] = None
-    # TODO: This doesn't work quite right and does not show the options (or accept them 😅)
+    # TODO(@alc-alc): showing codemods as `typing.Literal['app', 'decorators']` or just doesnt work.
     mods: Annotated[
-        list[generate_literal_for_codemods("framework_to_litestar._codemod.fastapi")] | None,
+        list[Literal[generate_options_for_codemods("framework_to_litestar._codemod.fastapi")]] | None,
         cappa.Arg(short=True, long=True),
         Doc("Specify codemods to apply, default to all if empty"),
     ] = None
