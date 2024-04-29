@@ -4,10 +4,16 @@
 # last locked with the following flags:
 #   pre: false
 #   features: []
-#   all-features: false
+#   all-features: true
 #   with-sources: false
 
 -e file:.
+annotated-types==0.6.0
+    # via pydantic
+anyio==4.3.0
+    # via httpx
+    # via litestar
+    # via starlette
 appdirs==1.4.4
     # via fissix
 attrs==23.2.0
@@ -16,14 +22,41 @@ bowler==0.9.0
     # via framework-to-litestar
 cappa==0.18.1
     # via framework-to-litestar
+certifi==2024.2.2
+    # via httpcore
+    # via httpx
 click==8.1.7
     # via bowler
+    # via litestar
     # via moreorless
+    # via rich-click
 eval-type-backport==0.2.0
     # via cappa
+exceptiongroup==1.2.1
+    # via anyio
+    # via litestar
+faker==24.14.1
+    # via polyfactory
+fastapi==0.110.2
+    # via framework-to-litestar
 fissix==24.4.24
     # via bowler
+h11==0.14.0
+    # via httpcore
+httpcore==1.0.5
+    # via httpx
+httpx==0.27.0
+    # via litestar
+idna==3.7
+    # via anyio
+    # via httpx
+importlib-metadata==7.1.0
+    # via litestar
+importlib-resources==6.4.0
+    # via litestar
 libcst==1.1.0
+    # via framework-to-litestar
+litestar==2.8.2
     # via framework-to-litestar
 markdown-it-py==3.0.0
     # via rich
@@ -31,22 +64,59 @@ mdurl==0.1.2
     # via markdown-it-py
 moreorless==0.4.0
     # via bowler
+msgspec==0.18.6
+    # via litestar
+multidict==6.0.5
+    # via litestar
 mypy-extensions==1.0.0
     # via typing-inspect
+polyfactory==2.15.0
+    # via litestar
+pydantic==2.7.1
+    # via fastapi
+pydantic-core==2.18.2
+    # via pydantic
 pygments==2.17.2
     # via rich
+python-dateutil==2.9.0.post0
+    # via faker
 pyyaml==6.0.1
     # via libcst
+    # via litestar
 rich==13.7.1
     # via cappa
+    # via litestar
+    # via rich-click
+rich-click==1.7.4
+    # via litestar
+six==1.16.0
+    # via python-dateutil
+sniffio==1.3.1
+    # via anyio
+    # via httpx
+starlette==0.37.2
+    # via fastapi
 typing-extensions==4.11.0
+    # via annotated-types
+    # via anyio
     # via cappa
+    # via faker
+    # via fastapi
     # via framework-to-litestar
     # via libcst
+    # via litestar
+    # via polyfactory
+    # via pydantic
+    # via pydantic-core
     # via rich
+    # via rich-click
+    # via starlette
     # via typing-inspect
 typing-inspect==0.9.0
     # via cappa
     # via libcst
 volatile==2.1.0
     # via bowler
+zipp==3.18.1
+    # via importlib-metadata
+    # via importlib-resources

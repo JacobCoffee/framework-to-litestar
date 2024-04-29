@@ -18,6 +18,14 @@ requires-python = ">= 3.8"
 framework-to-litestar = "framework_to_litestar.cli:main"
 ftl = "framework_to_litestar.cli:main"
 
+[project.optional-dependencies]
+litestar = [
+    "litestar>=2.0.1",
+]
+fastapi = [
+    "fastapi>=0.90.0",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

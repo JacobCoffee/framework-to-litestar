@@ -1,2 +1,1 @@
 """Codemods for FastAPI."""
-
