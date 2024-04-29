@@ -1,2 +1,2 @@
-# fastapi-to-litestar
-FastAPI to Litestar Codemod
+# framework-to-litestar
+Framework to Litestar Codemod
