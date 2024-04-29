@@ -1,7 +1,7 @@
 [project]
 name = "framework-to-litestar"
 version = "0.1.0"
-description = "Codemods to transform FastAPI code to LiteStar code."
+description = "Codemods to transform Python web framework code to Litestar code."
 authors = [
     { name = "Jacob Coffee", email = "jacob@z7x.org" }
 ]
